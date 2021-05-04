@@ -7,9 +7,8 @@ media = 0
 while True:
     lista.append(input('Nome: '))
     n1 = float(input('Nota1: '))
-    lista.append(n1)
     n2 = float(input('Nota2: '))
-    lista.append(n2)
+    lista.append([n1,n2]) # para as notas ficarem na mesma lista, isto é na posição 1 da lista principal ALUNOS
     media = (n1 + n2) / 2
     lista.append(media)
     alunos.append(lista[:])
@@ -17,13 +16,15 @@ while True:
     opçao= input('Quer continuar?[S/N]: ')
     if opçao in 'Nn':
         break
-print()
+print(f'{"N°":<4}{"NOME":<8}{"MEDIA":>8}')
 for pos, aluno in enumerate(alunos):
-    print(f'{pos} {aluno[0]}  {aluno[3]}') 
+    print(f'{pos:<4}{aluno[0]:<10}{aluno[2]:>5}') 
 vernota = ' '
 while True:
     vernota = int(input('Deseja ver a nota de qual aluno? ([999]finaliza o programa): '))
-    if vernota == 1:
-        print(f'Notas de {alunos[0][0]} são [{alunos[0][1]}, {alunos[0][2]}]')
-    elif vernota == 999:
+    if vernota == 999:
+        print(f'Finalizado!')
         break
+    if vernota < len(alunos):
+        print(f'Notas de {alunos[vernota][0]} são {alunos[vernota][1]}')
+        
