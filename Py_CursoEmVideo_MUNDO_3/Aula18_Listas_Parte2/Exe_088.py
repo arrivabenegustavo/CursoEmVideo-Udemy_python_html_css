@@ -10,15 +10,18 @@ total = 1
 while total <= quant:
     cont = 0
     while True:
-        gerados = randint(1,60)
-        if gerados not in lista:
-            lista.append(gerados)
+        numero = randint(1,60)
+        if numero not in lista:
+            lista.append(numero)
             cont += 1
-        if cont == 6:
+        if cont == 6: # conta até 6, pis o jogos da mega sena são 6 número em cada jogo
             break
     lista.sort()
     jogos.append(lista[:])
     lista.clear()
-    total += 1    
-for i, j in enumerate(jogos):
-    print(f'\nJogo{i}: {j}', end=' ')
+    total += 1 
+print()
+# este FOR mostra cada jogo em um linha
+for i, l in enumerate(jogos):
+    print(f'Jogo {i+1}: {l}')
+    sleep(1)
