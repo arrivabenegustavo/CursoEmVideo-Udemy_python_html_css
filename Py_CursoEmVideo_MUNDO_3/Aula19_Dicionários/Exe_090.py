@@ -10,5 +10,5 @@ elif alunos['media'] <= 6:
 elif alunos['media'] <= 10:
     alunos['situaçao'] = 'Aprovado'
 print('-'*30)
-for k, v in alunos.items():
-    print(f'- {k} é {v}')
+for i in cadastro:
+    print(i)
