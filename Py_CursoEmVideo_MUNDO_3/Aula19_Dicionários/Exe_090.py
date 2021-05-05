@@ -3,7 +3,7 @@ No final, mostre o conteúdo da estrutura na tela.'''
 alunos = dict()
 alunos['nome'] = input('Nome: ')
 alunos['media'] = float(input(f'Media de {alunos["nome"]}: '))
-if alunos['media'] <= 5:
+if alunos['media'] < 5:
     alunos['situaçao'] = 'Reprovado'
 elif alunos['media'] <= 6:
     alunos['situaçao'] = 'Recuperação'
