@@ -7,49 +7,47 @@ No final, tudo isso será guardado em um dicionário, incluindo o total de gols 
 
 artilharia = []
 jogador = {}
-gol =  []
+gol = []
 while True:
-    jogador.clear() #limpa dado anterior
-    jogador['nome'] =  input('Digite o nome do jogador: ').capitalize()
-    partidas = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
-    gol.clear() #limpar dado anterior
-    for p in range(0, partidas):
-        gol.append(int(input(f'Quantos gols marcou na {p+1}ª partida: ')))
+    jogador.clear()
+    jogador['nome'] = input('Nome do jogador: ')
+    partidas = int(input(f'Quantas partidas {jogador["nome"]} jogou: '))
+    gol.clear()
+    for p in range(partidas):
+        gol.append(int(input(f'Quantos gols foram marcados na {p+1} partida? ')))
     jogador['gols'] = gol[:]
-    jogador['total'] = sum(gol) # soma  os gols dentro da lista GOL
+    jogador['total'] = sum(gol)
     artilharia.append(jogador.copy())
     while True:
-        print('-'*30)
         opcao = input('Deseja continuar [S/N]: ').upper()[0]
         if opcao in 'SN':
             break
-        print('ERRO! Porfavor, digite S ou N.')
-    print('-'*30)
+        print('ERRO! Por favor, digite S ou N.')
     if opcao == 'N':
         break
-print('*'*40)
+print('*'*30)
 print('Cod ',end='')
-for k in jogador.keys(): #Para mostrar a chaves dos dicionários('nome', 'gols'..etc)
+for k in jogador.keys():
     print(f'{k:<15}',end='')
-print()# nesse caso quebra a linha pra mantes o dados na mesma linha
-for i, v in enumerate(artilharia):# para usar o contador (i) do enumerate
-    print(f'{i:^3} ',end='')
-    for d in v.values(): # para mostrar apenas os valores dentro dos dicionários
-        print(f'{str(d):<15}',end='') #por conter números, é necessário a conversão dos valores para (str)
+print()
+for c, v in enumerate(artilharia):
+    print(f'{c:^3} ',end='')
+    for d in v.values():
+        print(f'{str(d):<15}',end='')
     print()
 while True:
-    print('-'*40)
-    ver = int(input('Mostrar dados de qual jogador? ou (999) para sair: '))
-    print('-'*40)
+    ver = int(input('Deseja consultar qual jogador? 999 para sair: '))
     if ver == 999:
-        print('\n>>>> PROGRAMA FINALIZADO <<<<\n')
         break
     if ver >= len(artilharia):
-        print('ERRO! Não existe jogador com código 5.\nPor favor, digite um número até {len(artilharia)}')
+        print(f'ERRO! O código {ver} não existe!')
     else:
-        print(f'--LEVANTAMENTO do jogador {jogador["nome"]}:')    
+        print(f'--LEVANTAMENTO do jogador {artilharia[ver]["nome"]}:')
         for p, g in enumerate(artilharia[ver]['gols']):
-            print(f'     Na {p+1}ª partida marcou {g} vezes.')    
+            print(f'   Na {p+1}ª partida marcou {g} gols')
+            
+        
+            
     
            
             
