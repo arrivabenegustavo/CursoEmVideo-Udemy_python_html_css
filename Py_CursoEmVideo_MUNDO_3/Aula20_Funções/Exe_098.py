@@ -8,6 +8,8 @@ from time import sleep
 def contagem(i, f, p):
     print('-'*30)
     print(f'Contagem de de {i} até {f}, de {p} em {p}')
+    if p < 0: # caso o usuário coloque um número negativo
+        p *= -1 # transforma em positivo, pois o segundo while o contador ja subtrai
     if i < f:
         cont = i
         while cont <= f:
