@@ -14,27 +14,19 @@ def notas(*n, sit=False):
     :return: dicionario com informação das notas e situacao dos alunos.
     """
     valores = dict()
-    mai = men = tot = 0
     valores['total'] = len(n)
-    for i, v in enumerate(n):
-        if i == 0:
-            mai = v
-            men = v
-        else:
-            if v > mai:
-                mai = v
-                valores['maior'] = mai
-            if v < men:
-                men = v            
-                valores['menor'] = men
-    valores['media'] = sum(n) / valores['total']
+    valores['maior'] = max(n)
+    valores['menor'] = min(n)
+    valores['media'] = sum(n) / len(n)
     if sit:
-        if valores['media'] <=5:
-            valores['situacao'] = 'Ruim'
-        elif valores[f'media'] <= 10:
+        if valores['media'] >=7:
             valores['situacao'] = 'Boa'
+        elif valores[f'media'] >= 5:
+            valores['situacao'] = 'Razoável'
+        else:
+            valores['situacao'] = 'Ruim'
     return valores
 print('-'*30)            
-valores = notas(5.5, 1.5, 10, 8.5)
+valores = notas(5.5, 5.5, 10, 8.5, sit=True)
 print(valores)
 help(notas)
