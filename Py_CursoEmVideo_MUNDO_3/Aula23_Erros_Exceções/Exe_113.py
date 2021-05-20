@@ -5,6 +5,9 @@ def leiaint(msg):
         except (ValueError, TypeError):
             print('ERRO! Por favor, digite um número inteiro válido.')
             continue
+        except KeyboardInterrupt:
+            print('\nNão houve entrada!')
+            return '"Sem valor"'
         else:
             return n
 
@@ -15,6 +18,9 @@ def leiafloat(msg):
         except (ValueError, TypeError):
             print('ERRO! Por favor, digite um número real válido.') 
             continue
+        except KeyboardInterrupt:
+            print('\nNão houve entrada!')
+            return '"Sem valor"'
         else:
             return n
  
