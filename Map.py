@@ -1,5 +1,5 @@
 
-'''def aumenta(idd):
+def aumenta(idd):
     idd['nova_idade'] = idd['idade'] * 2
     return idd
     
@@ -11,7 +11,7 @@ pessoas = [{'nome': 'Gustavo', 'idade': 31},
    
 nova_idade = map(aumenta, pessoas)
 for idade in nova_idade:
-    print(idade)'''
+    print(idade)
     
     
 # Exemplo 2
