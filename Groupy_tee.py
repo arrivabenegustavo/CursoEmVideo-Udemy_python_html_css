@@ -25,25 +25,26 @@ alunos_agrupados = groupby(alunos, ordena)
 # Sem tee (com list)
 for agrupamento, valores_agrupados in alunos_agrupados:
   valores = list(valores_agrupados)
+  # Valores passado para uma lista, para não precisar de cópias como no exemplo abaixo
   print(f'Agrupamento: {agrupamento}')
   for aluno in valores:
     print(f'\t{aluno}')
+    # Mostra os alunos dentro do agrupamento de notas
   quantidade = len(valores)
   print(f'\t{quantidade} alunos tiraram nota {agrupamento}')
 '''
 
 # Com tee
 for agrupamento, valores_agrupados in alunos_agrupados:
-# função TEE para copiar os VALORES_AGRUPADOS nas variaveis VA1 e VA2
-# Por VALORES_AGRUPADOS ser um iterador, os valores foram esgotados
-# e por isso foi necessário a copia em outras variáveis.
   v1, v2 = tee(valores_agrupados)
-
+    # função TEE para copiar os VALORES_AGRUPADOS nas variaveis V1 e V2
+    # Por VALORES_AGRUPADOS ser um iterador, os valores foram esgotados
+    # e por isso foi necessário a copia em outras variáveis.
   print(f'Agrupamento: {agrupamento}')
-
-  for aluno in v1: # Variável que foi copiada
+  for aluno in v1: 
     print(f'\t{aluno}')
-    
-# VA1 esgotou os valores e usamos a segunda variável copiada VA2
+    # Mostra os alunos dentro do agrupamento de notas 
+
   quantidade = len(list(v2))
   print(f'\t{quantidade} alunos tiraram nota {agrupamento}')
+  # V1 esgotou os valores e usamos a segunda variável copiada V2
