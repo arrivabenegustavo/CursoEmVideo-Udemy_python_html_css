@@ -12,7 +12,11 @@ for i, v in enumerate(cpf[-2::-1], 2):
     tot2 += mult 
 result2 = 11 - (tot2 % 11)
 digito2 = str(result2)
-if digito1 == cpf[-2] and digito2 == cpf[-1]:
+
+# evita validar números senquenciais como ex: 11111111111, 22222222222...etc
+sequencia = cpf == str(cpf[0]) * len(cpf) 
+
+if digito1 == cpf[-2] and digito2 == cpf[-1] and not sequencia:
     print('Cpf válido!')
 else:
     print('Cpf inválido!')
