@@ -29,7 +29,7 @@ maquina = Maquina()
 
 
 # neste caso foi Associado maquina como a ferramenta do escritor 
-escritor.ferramenta = maquina
+escritor.ferramenta = caneta
 escritor.ferramenta.escrever()
 
 
