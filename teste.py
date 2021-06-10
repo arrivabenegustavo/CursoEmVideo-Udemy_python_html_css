@@ -1,4 +1,4 @@
-from random import randint
+from datetime import datetime
 
-aleator = randint(1, 10)
-print(aleator)
+atual = datetime.now()
+print(atual)
