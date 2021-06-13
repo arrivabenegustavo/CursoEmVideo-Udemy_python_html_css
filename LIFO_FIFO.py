@@ -6,7 +6,7 @@ FIFO (queue) -> First in, First out
 
 # Para FIFO importamos o modulo COLLECTIONS(deque)
 # deque -> é um tipo de lista
-# Tudo dentro de COLLECTIONS são estrutura de dados de alto desempenho
+# Tudo dentro de COLLECTIONS são estruturas de dados de alto desempenho
 # Usado para quando usar muitos dados
 
 from collections import deque
@@ -23,7 +23,7 @@ fila = deque(maxlen=5)
 # neste caso, sempre que for informado mais de cindo dados, ele removerá o primeiro dado automaticamente
 # Exemplo:
 
-for i in range(25):
+for i in range(15):
     fila.append(i)
     sleep(1)
     print(fila)
