@@ -1,6 +1,8 @@
 import pymysql.cursors
 from contextlib import contextmanager
 
+# PARA COMENTAR COM '#' VARIAS LINHAS SELECIONADAS (Ctrl + ;)
+
 # CRUD - CREATE, READ, UPDATE, DELETE
 
 @contextmanager # Gerenciador de contexto
