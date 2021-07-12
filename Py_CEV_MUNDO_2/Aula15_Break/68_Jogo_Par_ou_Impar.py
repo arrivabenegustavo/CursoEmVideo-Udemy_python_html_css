@@ -13,7 +13,7 @@ while True:
     #Se ESCOLHA estiver fora do primeiro laço, o programa só perguntará Par ou Ímpar somente na primeira passagem
     while escolha not in 'PI':# Enquanto não for P ou I, não sairá do laço
         escolha = str(input('PAR ou ÍMPAR [P/I]: ')).strip().upper()[0]
-    print(f'Você escolheu {jogador} e computador {computador}> Total {soma}',end=' ')
+    print(f'Você escolheu {jogador} e computador {computador} > Total {soma}',end=' ')
     print('deu PAR' if soma % 2 == 0 else 'deu ÍMPAR') # acrescenta a classificação na frase a cima   
     print('-'*45)
     if soma%2==0: #Se soma for PAR
