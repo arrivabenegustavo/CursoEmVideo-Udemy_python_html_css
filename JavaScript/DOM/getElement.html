@@ -20,10 +20,19 @@
     </head>
     <body>
         <h1>Olá, mundo!</h1>
+        <p id="p1"><strong>Aprendendo DOM</strong></p>
+        <p class="p2">Testes com seleção DOM</p>
 
         <script>
-            var nome = window.prompt('Qual seu nome? ')
+            var nome = 'Gustavo'
             document.write(`Prazer em te conhecer, ${nome}`)
+            var teste = document.getElementById('p1')
+            teste.style.color = 'white' // alterando o estilo do p1 por DOM
+
+            //formato novo nas novas versoes do emcmaScript
+
+            var q = document.querySelector('class')
+
         </script>
         
     </body>
