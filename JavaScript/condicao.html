@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DETRAN</title>
+
+        <style>
+        #txtvel{
+            width: 50px;
+            font: bold;   
+        } 
+
+        </style>
+    </head>
+    <body>
+        <h1>Sistema de Multas</h1>
+        <p><strong>Velocidade do carro: <input type="number" id="txtvel">Km/h</strong> 
+        <input type="button" value="Verificar" onclick="verifica()">
+        </p>
+        <p id="resp"></p> 
+    <script>
+        function verifica(){
+            var veltxt = document.getElementById('txtvel') // pega do html
+            var vel = Number(veltxt.value) //converte para numero em outra variável
+            var r = document.getElementById('resp')
+            
+
+            if(vel <= 60){
+                r.innerHTML =`Você passou a ${vel} km/h e está dentro do limite de velocidade`
+            }else {
+                r.innerHTML =`Multado! Você passou a ${vel} km/h. Acima do limite de velocidade`
+            }
+        }
+
+    </script>
+
+    </body>
+</html>
